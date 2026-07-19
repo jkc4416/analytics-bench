@@ -1,0 +1,75 @@
+==============================================================================
+DuckDB vs Polars benchmark
+data=data.parquet  dims=dims.parquet
+warmup=1 timed=3
+==============================================================================
+
+>>> Running engine=duckdb query=q1 (filtered_groupby) in fresh subprocess ...
+[duckdb] threads=10
+    times(s)=[0.0168, 0.0161, 0.0178] median=0.0168  peak_rss=77.0 MiB  result_rows=[10, 10, 10]
+
+>>> Running engine=duckdb query=q2 (highcard_topn) in fresh subprocess ...
+[duckdb] threads=10
+    times(s)=[0.0285, 0.0312, 0.0272] median=0.0285  peak_rss=123.2 MiB  result_rows=[20, 20, 20]
+
+>>> Running engine=duckdb query=q3 (time_bucket) in fresh subprocess ...
+[duckdb] threads=10
+    times(s)=[0.038, 0.0416, 0.0396] median=0.0396  peak_rss=120.9 MiB  result_rows=[910, 910, 910]
+
+>>> Running engine=duckdb query=q4 (join_dims) in fresh subprocess ...
+[duckdb] threads=10
+    times(s)=[0.0343, 0.036, 0.0332] median=0.0343  peak_rss=77.1 MiB  result_rows=[5, 5, 5]
+
+>>> Running engine=duckdb query=q5 (scan_count_distinct) in fresh subprocess ...
+[duckdb] threads=10
+    times(s)=[0.0204, 0.021, 0.0224] median=0.0210  peak_rss=107.0 MiB  result_rows=[1, 1, 1]
+
+>>> Running engine=polars query=q1 (filtered_groupby) in fresh subprocess ...
+[polars] threads=10
+    times(s)=[0.0515, 0.0492, 0.0511] median=0.0511  peak_rss=354.5 MiB  result_rows=[10, 10, 10]
+
+>>> Running engine=polars query=q2 (highcard_topn) in fresh subprocess ...
+[polars] threads=10
+    times(s)=[0.0913, 0.094, 0.0999] median=0.0940  peak_rss=463.6 MiB  result_rows=[20, 20, 20]
+
+>>> Running engine=polars query=q3 (time_bucket) in fresh subprocess ...
+[polars] threads=10
+    times(s)=[0.1491, 0.1504, 0.1426] median=0.1491  peak_rss=1086.1 MiB  result_rows=[910, 910, 910]
+
+>>> Running engine=polars query=q4 (join_dims) in fresh subprocess ...
+[polars] threads=10
+    times(s)=[0.1763, 0.1781, 0.1747] median=0.1763  peak_rss=886.9 MiB  result_rows=[5, 5, 5]
+
+>>> Running engine=polars query=q5 (scan_count_distinct) in fresh subprocess ...
+[polars] threads=10
+    times(s)=[0.0388, 0.0392, 0.0384] median=0.0388  peak_rss=181.8 MiB  result_rows=[1, 1, 1]
+
+>>> Arrow interop: duckdb.arrow() -> polars.from_arrow round trip in fresh subprocess ...
+
+==============================================================================
+RESULTS  (median of 3 timed runs)
+==============================================================================
+query                 DuckDB med(s)  Polars med(s)   ratio P/D
+--------------------------------------------------------------
+filtered_groupby             0.0168         0.0511        3.05
+highcard_topn                0.0285         0.0940        3.30
+time_bucket                  0.0396         0.1491        3.76
+join_dims                    0.0343         0.1763        5.14
+scan_count_distinct          0.0210         0.0388        1.85
+
+PEAK RSS  (max over timed runs, MiB)
+query                    DuckDB MiB     Polars MiB
+--------------------------------------------------
+filtered_groupby               77.0          354.5
+highcard_topn                 123.2          463.6
+time_bucket                   120.9         1086.1
+join_dims                      77.1          886.9
+scan_count_distinct           107.0          181.8
+
+ARROW INTEROP  (duckdb.arrow -> polars.from_arrow, median of 3)
+  rows_transferred     = 3,001,101
+  duckdb -> arrow  (s) = 0.0018
+  arrow  -> polars (s) = 0.2055
+  round trip total (s) = 0.2073
+
+Wrote results.json

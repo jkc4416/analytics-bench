@@ -1,0 +1,51 @@
+PARQUET COMPRESSION-CODEC BENCHMARK
+run started: 2026-07-19 17:22:26 KST
+python: 3.13.1 (main, Dec  3 2024, 17:59:52) [Clang 16.0.0 (clang-1600.0.26.4)]
+pyarrow: 25.0.0 | arrow C++: 25.0.0
+platform: macOS-26.5.1-arm64-arm-64bit-Mach-O
+machine: arm64
+logical cpus: 10 | physical cpus: 10
+memory total: 32.0 GiB  available: 12.0 GiB
+N_RUNS per measurement: 3
+
+==============================================================================
+LOADING CANONICAL TABLE
+==============================================================================
+sorting by ts ascending ...
+rows=10,000,000  cols=5  in-memory nbytes=312,390,663 (297.9 MiB)
+schema:
+    ts: timestamp[us]
+    user_id: int32
+    category: string
+    amount: double
+    flag: bool
+ts non-decreasing fraction after sort: 1.000000
+
+==============================================================================
+CODEC MATRIX  (row_group_size=1000000, dictionary encoding ON)
+==============================================================================
+predicate: ts >= 2024-02-08 10:13:18.975015  (expected ~498,711 rows, 4.99%)
+
+[none    ] size=  125.06 MiB  write_med=0.7139s  read_med=0.0739s  col_med=0.0083s  filt_push_med=0.0176s (rows=498,711)  filt_nopush_med=0.0163s
+[snappy  ] size=  102.17 MiB  write_med=0.8760s  read_med=0.0890s  col_med=0.0092s  filt_push_med=0.0170s (rows=498,711)  filt_nopush_med=0.0303s
+[zstd_l3 ] size=   68.61 MiB  write_med=0.9421s  read_med=0.0783s  col_med=0.0140s  filt_push_med=0.0173s (rows=498,711)  filt_nopush_med=0.0406s
+[zstd_l9 ] size=   68.52 MiB  write_med=2.3837s  read_med=0.0755s  col_med=0.0137s  filt_push_med=0.0171s (rows=498,711)  filt_nopush_med=0.0407s
+[gzip    ] size=   74.90 MiB  write_med=44.3629s  read_med=0.1048s  col_med=0.0352s  filt_push_med=0.0230s (rows=498,711)  filt_nopush_med=0.0900s
+[lz4     ] size=  102.65 MiB  write_med=0.8580s  read_med=0.0858s  col_med=0.0084s  filt_push_med=0.0172s (rows=498,711)  filt_nopush_med=0.0216s
+
+==============================================================================
+ROW-GROUP SIZE STUDY  (codec=zstd level 3, dictionary ON)
+==============================================================================
+[rg=  131,072] groups=  77  size=   87.41 MiB  write_med=1.4352s  read_med=0.0587s  filt_push_med=0.0070s (rows=498,711)
+[rg=1,000,000] groups=  10  size=   68.61 MiB  write_med=0.9817s  read_med=0.0793s  filt_push_med=0.0176s (rows=498,711)
+[rg=5,000,000] groups=   2  size=   66.79 MiB  write_med=0.9063s  read_med=0.1922s  filt_push_med=0.0853s (rows=498,711)
+
+==============================================================================
+DICTIONARY ENCODING STUDY  (codec=zstd level 3, string col 'category')
+==============================================================================
+[dict_on ] total=   68.61 MiB  category_col_compressed=  3.912 MiB  category_col_uncompressed=   4.813 MiB  write_med=1.0406s
+[dict_off] total=   87.40 MiB  category_col_compressed= 14.172 MiB  category_col_uncompressed= 104.825 MiB  write_med=1.1652s
+delta (dict_off - dict_on): total +18.79 MiB, category col +10.26 MiB (3.6x larger without dict)
+
+wrote parquet-codecs/results.json
+run finished: 2026-07-19 17:25:19 KST

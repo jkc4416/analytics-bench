@@ -1,0 +1,10 @@
+# Generated datasets (regenerate with gen_data.py / the benchmark scripts)
+*.parquet
+
+# Python virtual environments
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.pyc

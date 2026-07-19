@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "data_file": "data.parquet",
+    "dims_file": "dims.parquet",
+    "warmup_runs": 1,
+    "timed_runs": 3,
+    "engines": [
+      "duckdb",
+      "polars"
+    ],
+    "queries": {
+      "q1": "filtered_groupby",
+      "q2": "highcard_topn",
+      "q3": "time_bucket",
+      "q4": "join_dims",
+      "q5": "scan_count_distinct"
+    }
+  },
+  "results": {
+    "duckdb:q1": {
+      "engine": "duckdb",
+      "query": "q1",
+      "label": "filtered_groupby",
+      "times": [
+        0.016776791773736477,
+        0.01612729113548994,
+        0.017846541944891214
+      ],
+      "median_time_s": 0.016776791773736477,
+      "peak_rss_bytes": [
+        77185024,
+        79134720,
+        80773120
+      ],
+      "peak_rss_max_bytes": 80773120,
+      "result_rows": [
+        10,
+        10,
+        10
+      ]
+    },
+    "duckdb:q2": {
+      "engine": "duckdb",
+      "query": "q2",
+      "label": "highcard_topn",
+      "times": [
+        0.02845091698691249,
+        0.0312111247330904,
+        0.027249207720160484
+      ],
+      "median_time_s": 0.02845091698691249,
+      "peak_rss_bytes": [
+        122028032,
+        126140416,
+        129187840
+      ],
+      "peak_rss_max_bytes": 129187840,
+      "result_rows": [
+        20,
+        20,
+        20
+      ]
+    },
+    "duckdb:q3": {
+      "engine": "duckdb",
+      "query": "q3",
+      "label": "time_bucket",
+      "times": [
+        0.038035249803215265,
+        0.04158854205161333,
+        0.03963099978864193
+      ],
+      "median_time_s": 0.03963099978864193,
+      "peak_rss_bytes": [
+        117637120,
+        122601472,
+        126730240
+      ],
+      "peak_rss_max_bytes": 126730240,
+      "result_rows": [
+        910,
+        910,
+        910
+      ]
+    },
+    "duckdb:q4": {
+      "engine": "duckdb",
+      "query": "q4",
+      "label": "join_dims",
+      "times": [
+        0.03430604236200452,
+        0.036023749969899654,
+        0.03324620891362429
+      ],
+      "median_time_s": 0.03430604236200452,
+      "peak_rss_bytes": [
+        76873728,
+        79757312,
+        80887808
+      ],
+      "peak_rss_max_bytes": 80887808,
+      "result_rows": [
+        5,
+        5,
+        5
+      ]
+    },
+    "duckdb:q5": {
+      "engine": "duckdb",
+      "query": "q5",
+      "label": "scan_count_distinct",
+      "times": [
+        0.020449791569262743,
+        0.020957540720701218,
+        0.022417583037167788
+      ],
+      "median_time_s": 0.020957540720701218,
+      "peak_rss_bytes": [
+        97517568,
+        105185280,
+        112197632
+      ],
+      "peak_rss_max_bytes": 112197632,
+      "result_rows": [
+        1,
+        1,
+        1
+      ]
+    },
+    "polars:q1": {
+      "engine": "polars",
+      "query": "q1",
+      "label": "filtered_groupby",
+      "times": [
+        0.051520582754164934,
+        0.04919108282774687,
+        0.05111241713166237
+      ],
+      "median_time_s": 0.05111241713166237,
+      "peak_rss_bytes": [
+        341491712,
+        370786304,
+        371703808
+      ],
+      "peak_rss_max_bytes": 371703808,
+      "result_rows": [
+        10,
+        10,
+        10
+      ]
+    },
+    "polars:q2": {
+      "engine": "polars",
+      "query": "q2",
+      "label": "highcard_topn",
+      "times": [
+        0.09131258307024837,
+        0.0939620416611433,
+        0.09992891596630216
+      ],
+      "median_time_s": 0.0939620416611433,
+      "peak_rss_bytes": [
+        436682752,
+        460668928,
+        486113280
+      ],
+      "peak_rss_max_bytes": 486113280,
+      "result_rows": [
+        20,
+        20,
+        20
+      ]
+    },
+    "polars:q3": {
+      "engine": "polars",
+      "query": "q3",
+      "label": "time_bucket",
+      "times": [
+        0.14907741686329246,
+        0.15040425024926662,
+        0.14260141691192985
+      ],
+      "median_time_s": 0.14907741686329246,
+      "peak_rss_bytes": [
+        1102839808,
+        1122729984,
+        1138819072
+      ],
+      "peak_rss_max_bytes": 1138819072,
+      "result_rows": [
+        910,
+        910,
+        910
+      ]
+    },
+    "polars:q4": {
+      "engine": "polars",
+      "query": "q4",
+      "label": "join_dims",
+      "times": [
+        0.17631729179993272,
+        0.1781234578229487,
+        0.1746724173426628
+      ],
+      "median_time_s": 0.17631729179993272,
+      "peak_rss_bytes": [
+        929972224,
+        901316608,
+        909508608
+      ],
+      "peak_rss_max_bytes": 929972224,
+      "result_rows": [
+        5,
+        5,
+        5
+      ]
+    },
+    "polars:q5": {
+      "engine": "polars",
+      "query": "q5",
+      "label": "scan_count_distinct",
+      "times": [
+        0.03884445782750845,
+        0.039168457966297865,
+        0.03838583314791322
+      ],
+      "median_time_s": 0.03884445782750845,
+      "peak_rss_bytes": [
+        170180608,
+        176799744,
+        190644224
+      ],
+      "peak_rss_max_bytes": 190644224,
+      "result_rows": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "table": [
+    {
+      "query": "q1",
+      "label": "filtered_groupby",
+      "duckdb_median_s": 0.016776791773736477,
+      "polars_median_s": 0.05111241713166237,
+      "ratio_polars_over_duckdb": 3.046614502999149
+    },
+    {
+      "query": "q2",
+      "label": "highcard_topn",
+      "duckdb_median_s": 0.02845091698691249,
+      "polars_median_s": 0.0939620416611433,
+      "ratio_polars_over_duckdb": 3.3026015191132903
+    },
+    {
+      "query": "q3",
+      "label": "time_bucket",
+      "duckdb_median_s": 0.03963099978864193,
+      "polars_median_s": 0.14907741686329246,
+      "ratio_polars_over_duckdb": 3.7616365385265245
+    },
+    {
+      "query": "q4",
+      "label": "join_dims",
+      "duckdb_median_s": 0.03430604236200452,
+      "polars_median_s": 0.17631729179993272,
+      "ratio_polars_over_duckdb": 5.13954043253943
+    },
+    {
+      "query": "q5",
+      "label": "scan_count_distinct",
+      "duckdb_median_s": 0.020957540720701218,
+      "polars_median_s": 0.03884445782750845,
+      "ratio_polars_over_duckdb": 1.8534835907124867
+    }
+  ],
+  "arrow_interop": {
+    "runs": [
+      {
+        "duckdb_to_arrow_s": 0.00177695881575346,
+        "arrow_to_polars_s": 0.20306525006890297,
+        "total_s": 0.20484220888465643,
+        "rows": 3001101
+      },
+      {
+        "duckdb_to_arrow_s": 0.001798749901354313,
+        "arrow_to_polars_s": 0.21326720900833607,
+        "total_s": 0.21506595890969038,
+        "rows": 3001101
+      },
+      {
+        "duckdb_to_arrow_s": 0.00183383421972394,
+        "arrow_to_polars_s": 0.20547966565936804,
+        "total_s": 0.20731349987909198,
+        "rows": 3001101
+      }
+    ],
+    "median_duckdb_to_arrow_s": 0.001798749901354313,
+    "median_arrow_to_polars_s": 0.20547966565936804,
+    "median_total_s": 0.20731349987909198,
+    "rows_transferred": 3001101
+  }
+}

@@ -1,0 +1,10 @@
+seed=20260719
+rows=10,000,000
+n_users=500,000
+categories=10
+gen_seconds=2.974
+out=data.parquet
+file_size_bytes=126976888
+file_size_mb=121.09
+dims_out=dims.parquet
+dims_rows=10

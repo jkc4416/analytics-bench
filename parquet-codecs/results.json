@@ -1,0 +1,321 @@
+{
+  "meta": {
+    "run_started": "2026-07-19 17:25:19 KST",
+    "python_version": "3.13.1",
+    "pyarrow_version": "25.0.0",
+    "arrow_cpp_version": "25.0.0",
+    "duckdb_version": "1.5.4",
+    "psutil_version": "7.2.2",
+    "zstandard_version": "0.25.0",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "logical_cpus": 10,
+    "physical_cpus": 10,
+    "memory_total_bytes": 34359738368,
+    "n_runs": 3,
+    "dataset_source": "duckdb-vs-polars/data.parquet",
+    "dataset_rows": 10000000,
+    "dataset_in_memory_nbytes": 312390663,
+    "dataset_sorted_by": "ts ascending",
+    "main_row_group_size": 1000000,
+    "read_cache_state": "warm (file just written); read times measure decode/parse CPU",
+    "gzip_note": "gzip written at pyarrow default level (6)"
+  },
+  "codec_matrix": {
+    "none": {
+      "compression": "none",
+      "compression_level": null,
+      "row_group_size": 1000000,
+      "num_row_groups": 10,
+      "file_size_bytes": 131131393,
+      "file_size_mib": 125.057,
+      "write_times_s": [
+        0.7138670841231942,
+        0.6626198343001306,
+        0.7472957912832499
+      ],
+      "write_median_s": 0.7139,
+      "read_full_times_s": [
+        0.07434125011786819,
+        0.07394054206088185,
+        0.07091712485998869
+      ],
+      "read_full_median_s": 0.0739,
+      "read_col_amount_times_s": [
+        0.008307541720569134,
+        0.008502874989062548,
+        0.008305917028337717
+      ],
+      "read_col_amount_median_s": 0.0083,
+      "read_filtered_pushdown_times_s": [
+        0.018013750202953815,
+        0.01746049989014864,
+        0.017604791093617678
+      ],
+      "read_filtered_pushdown_median_s": 0.0176,
+      "read_filtered_nopushdown_times_s": [
+        0.016274374909698963,
+        0.01856729108840227,
+        0.01550679188221693
+      ],
+      "read_filtered_nopushdown_median_s": 0.0163,
+      "rows_full": 10000000,
+      "rows_filtered": 498711
+    },
+    "snappy": {
+      "compression": "snappy",
+      "compression_level": null,
+      "row_group_size": 1000000,
+      "num_row_groups": 10,
+      "file_size_bytes": 107127895,
+      "file_size_mib": 102.165,
+      "write_times_s": [
+        0.8855503750964999,
+        0.8759784167632461,
+        0.8270540833473206
+      ],
+      "write_median_s": 0.876,
+      "read_full_times_s": [
+        0.08898149989545345,
+        0.08996062492951751,
+        0.07842791685834527
+      ],
+      "read_full_median_s": 0.089,
+      "read_col_amount_times_s": [
+        0.009174708742648363,
+        0.015441750176250935,
+        0.009225834161043167
+      ],
+      "read_col_amount_median_s": 0.0092,
+      "read_filtered_pushdown_times_s": [
+        0.017303040716797113,
+        0.016938292421400547,
+        0.017019083723425865
+      ],
+      "read_filtered_pushdown_median_s": 0.017,
+      "read_filtered_nopushdown_times_s": [
+        0.03433558298274875,
+        0.029526874888688326,
+        0.030267999973148108
+      ],
+      "read_filtered_nopushdown_median_s": 0.0303,
+      "rows_full": 10000000,
+      "rows_filtered": 498711
+    },
+    "zstd_l3": {
+      "compression": "zstd",
+      "compression_level": 3,
+      "row_group_size": 1000000,
+      "num_row_groups": 10,
+      "file_size_bytes": 71946647,
+      "file_size_mib": 68.614,
+      "write_times_s": [
+        0.9727735831402242,
+        0.9420509170740843,
+        0.9314145827665925
+      ],
+      "write_median_s": 0.9421,
+      "read_full_times_s": [
+        0.08040070813149214,
+        0.07793841697275639,
+        0.07827774994075298
+      ],
+      "read_full_median_s": 0.0783,
+      "read_col_amount_times_s": [
+        0.014655832666903734,
+        0.013952832669019699,
+        0.013957290910184383
+      ],
+      "read_col_amount_median_s": 0.014,
+      "read_filtered_pushdown_times_s": [
+        0.01733508426696062,
+        0.017380166798830032,
+        0.01721858326345682
+      ],
+      "read_filtered_pushdown_median_s": 0.0173,
+      "read_filtered_nopushdown_times_s": [
+        0.040633541997522116,
+        0.04020062508061528,
+        0.04060470825061202
+      ],
+      "read_filtered_nopushdown_median_s": 0.0406,
+      "rows_full": 10000000,
+      "rows_filtered": 498711
+    },
+    "zstd_l9": {
+      "compression": "zstd",
+      "compression_level": 9,
+      "row_group_size": 1000000,
+      "num_row_groups": 10,
+      "file_size_bytes": 71846858,
+      "file_size_mib": 68.519,
+      "write_times_s": [
+        2.383665584027767,
+        2.3870461666956544,
+        2.3790527498349547
+      ],
+      "write_median_s": 2.3837,
+      "read_full_times_s": [
+        0.07794329198077321,
+        0.07546716742217541,
+        0.07320779236033559
+      ],
+      "read_full_median_s": 0.0755,
+      "read_col_amount_times_s": [
+        0.014329750090837479,
+        0.013689958024770021,
+        0.013706000056117773
+      ],
+      "read_col_amount_median_s": 0.0137,
+      "read_filtered_pushdown_times_s": [
+        0.017132916022092104,
+        0.017170374747365713,
+        0.016803083010017872
+      ],
+      "read_filtered_pushdown_median_s": 0.0171,
+      "read_filtered_nopushdown_times_s": [
+        0.04066270822659135,
+        0.04012850020080805,
+        0.04072591569274664
+      ],
+      "read_filtered_nopushdown_median_s": 0.0407,
+      "rows_full": 10000000,
+      "rows_filtered": 498711
+    },
+    "gzip": {
+      "compression": "gzip",
+      "compression_level": null,
+      "row_group_size": 1000000,
+      "num_row_groups": 10,
+      "file_size_bytes": 78539655,
+      "file_size_mib": 74.901,
+      "write_times_s": [
+        44.42781341681257,
+        44.36285904189572,
+        44.33948733424768
+      ],
+      "write_median_s": 44.3629,
+      "read_full_times_s": [
+        0.10849762475118041,
+        0.1048284163698554,
+        0.1008190419524908
+      ],
+      "read_full_median_s": 0.1048,
+      "read_col_amount_times_s": [
+        0.035985750146210194,
+        0.03490154119208455,
+        0.03520854189991951
+      ],
+      "read_col_amount_median_s": 0.0352,
+      "read_filtered_pushdown_times_s": [
+        0.023024499882012606,
+        0.02288104221224785,
+        0.026749791111797094
+      ],
+      "read_filtered_pushdown_median_s": 0.023,
+      "read_filtered_nopushdown_times_s": [
+        0.09002816630527377,
+        0.08946991711854935,
+        0.09057462494820356
+      ],
+      "read_filtered_nopushdown_median_s": 0.09,
+      "rows_full": 10000000,
+      "rows_filtered": 498711
+    },
+    "lz4": {
+      "compression": "lz4",
+      "compression_level": null,
+      "row_group_size": 1000000,
+      "num_row_groups": 10,
+      "file_size_bytes": 107636991,
+      "file_size_mib": 102.651,
+      "write_times_s": [
+        0.8612602078355849,
+        0.8580486658029258,
+        0.8322563753463328
+      ],
+      "write_median_s": 0.858,
+      "read_full_times_s": [
+        0.08532470930367708,
+        0.0873501249589026,
+        0.08582212496548891
+      ],
+      "read_full_median_s": 0.0858,
+      "read_col_amount_times_s": [
+        0.008428959175944328,
+        0.008492541965097189,
+        0.007904666941612959
+      ],
+      "read_col_amount_median_s": 0.0084,
+      "read_filtered_pushdown_times_s": [
+        0.01771750021725893,
+        0.01723754173144698,
+        0.017245708033442497
+      ],
+      "read_filtered_pushdown_median_s": 0.0172,
+      "read_filtered_nopushdown_times_s": [
+        0.021837459411472082,
+        0.021575833205133677,
+        0.021190875209867954
+      ],
+      "read_filtered_nopushdown_median_s": 0.0216,
+      "rows_full": 10000000,
+      "rows_filtered": 498711
+    }
+  },
+  "row_group_study": {
+    "131072": {
+      "row_group_size": 131072,
+      "num_row_groups": 77,
+      "file_size_bytes": 91660110,
+      "file_size_mib": 87.414,
+      "write_median_s": 1.4352,
+      "read_full_median_s": 0.0587,
+      "read_filtered_pushdown_median_s": 0.007,
+      "rows_filtered": 498711
+    },
+    "1000000": {
+      "row_group_size": 1000000,
+      "num_row_groups": 10,
+      "file_size_bytes": 71946647,
+      "file_size_mib": 68.614,
+      "write_median_s": 0.9817,
+      "read_full_median_s": 0.0793,
+      "read_filtered_pushdown_median_s": 0.0176,
+      "rows_filtered": 498711
+    },
+    "5000000": {
+      "row_group_size": 5000000,
+      "num_row_groups": 2,
+      "file_size_bytes": 70032543,
+      "file_size_mib": 66.788,
+      "write_median_s": 0.9063,
+      "read_full_median_s": 0.1922,
+      "read_filtered_pushdown_median_s": 0.0853,
+      "rows_filtered": 498711
+    }
+  },
+  "dictionary_study": {
+    "dict_on": {
+      "use_dictionary": true,
+      "total_file_size_bytes": 71946647,
+      "total_file_size_mib": 68.614,
+      "category_compressed_bytes": 4102368,
+      "category_uncompressed_bytes": 5047217,
+      "write_median_s": 1.0406
+    },
+    "dict_off": {
+      "use_dictionary": false,
+      "total_file_size_bytes": 91645025,
+      "total_file_size_mib": 87.4,
+      "category_compressed_bytes": 14860498,
+      "category_uncompressed_bytes": 109916663,
+      "write_median_s": 1.1652
+    },
+    "delta": {
+      "total_bytes_off_minus_on": 19698378,
+      "category_bytes_off_minus_on": 10758130,
+      "category_ratio_off_over_on": 3.622
+    }
+  }
+}

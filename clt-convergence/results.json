@@ -1,0 +1,182 @@
+{
+ "meta": {
+  "R": 100000,
+  "seed": 42,
+  "n_values": [
+   2,
+   5,
+   30,
+   100,
+   1000
+  ],
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "python": "3.11.14",
+  "machine": "Apple M2 Pro, 32 GiB, macOS",
+  "seconds": 4.6,
+  "command": "uv run --with numpy,scipy python clt_sim.py",
+  "date": "2026-09-21"
+ },
+ "results": [
+  {
+   "parent": "uniform(0,1)",
+   "n": 2,
+   "skew": 0.0,
+   "excess_kurtosis": -0.596,
+   "ks_to_normal": 0.0172,
+   "t_interval_coverage": 0.9256
+  },
+  {
+   "parent": "uniform(0,1)",
+   "n": 5,
+   "skew": 0.003,
+   "excess_kurtosis": -0.225,
+   "ks_to_normal": 0.0056,
+   "t_interval_coverage": 0.9345
+  },
+  {
+   "parent": "uniform(0,1)",
+   "n": 30,
+   "skew": 0.007,
+   "excess_kurtosis": -0.053,
+   "ks_to_normal": 0.0033,
+   "t_interval_coverage": 0.9501
+  },
+  {
+   "parent": "uniform(0,1)",
+   "n": 100,
+   "skew": 0.01,
+   "excess_kurtosis": 0.012,
+   "ks_to_normal": 0.0023,
+   "t_interval_coverage": 0.9506
+  },
+  {
+   "parent": "uniform(0,1)",
+   "n": 1000,
+   "skew": 0.002,
+   "excess_kurtosis": -0.006,
+   "ks_to_normal": 0.0021,
+   "t_interval_coverage": 0.9509
+  },
+  {
+   "parent": "exponential(1)",
+   "n": 2,
+   "skew": 1.403,
+   "excess_kurtosis": 2.898,
+   "ks_to_normal": 0.0956,
+   "t_interval_coverage": 0.9104
+  },
+  {
+   "parent": "exponential(1)",
+   "n": 5,
+   "skew": 0.91,
+   "excess_kurtosis": 1.256,
+   "ks_to_normal": 0.062,
+   "t_interval_coverage": 0.8836
+  },
+  {
+   "parent": "exponential(1)",
+   "n": 30,
+   "skew": 0.375,
+   "excess_kurtosis": 0.211,
+   "ks_to_normal": 0.0269,
+   "t_interval_coverage": 0.9278
+  },
+  {
+   "parent": "exponential(1)",
+   "n": 100,
+   "skew": 0.196,
+   "excess_kurtosis": 0.039,
+   "ks_to_normal": 0.0151,
+   "t_interval_coverage": 0.943
+  },
+  {
+   "parent": "exponential(1)",
+   "n": 1000,
+   "skew": 0.048,
+   "excess_kurtosis": 0.021,
+   "ks_to_normal": 0.0035,
+   "t_interval_coverage": 0.9506
+  },
+  {
+   "parent": "lognormal(0,1)",
+   "n": 2,
+   "skew": 4.301,
+   "excess_kurtosis": 43.98,
+   "ks_to_normal": 0.1648,
+   "t_interval_coverage": 0.8952
+  },
+  {
+   "parent": "lognormal(0,1)",
+   "n": 5,
+   "skew": 2.714,
+   "excess_kurtosis": 16.944,
+   "ks_to_normal": 0.1178,
+   "t_interval_coverage": 0.8227
+  },
+  {
+   "parent": "lognormal(0,1)",
+   "n": 30,
+   "skew": 1.159,
+   "excess_kurtosis": 3.68,
+   "ks_to_normal": 0.0604,
+   "t_interval_coverage": 0.8818
+  },
+  {
+   "parent": "lognormal(0,1)",
+   "n": 100,
+   "skew": 0.623,
+   "excess_kurtosis": 0.987,
+   "ks_to_normal": 0.0367,
+   "t_interval_coverage": 0.9186
+  },
+  {
+   "parent": "lognormal(0,1)",
+   "n": 1000,
+   "skew": 0.188,
+   "excess_kurtosis": 0.084,
+   "ks_to_normal": 0.0126,
+   "t_interval_coverage": 0.9436
+  },
+  {
+   "parent": "bernoulli(p=0.05)",
+   "n": 2,
+   "skew": 2.904,
+   "excess_kurtosis": 7.406,
+   "ks_to_normal": 0.5296,
+   "t_interval_coverage": 0.0956
+  },
+  {
+   "parent": "bernoulli(p=0.05)",
+   "n": 5,
+   "skew": 1.86,
+   "excess_kurtosis": 3.09,
+   "ks_to_normal": 0.4698,
+   "t_interval_coverage": 0.2258
+  },
+  {
+   "parent": "bernoulli(p=0.05)",
+   "n": 30,
+   "skew": 0.75,
+   "excess_kurtosis": 0.478,
+   "ks_to_normal": 0.2159,
+   "t_interval_coverage": 0.7851
+  },
+  {
+   "parent": "bernoulli(p=0.05)",
+   "n": 100,
+   "skew": 0.42,
+   "excess_kurtosis": 0.188,
+   "ks_to_normal": 0.1151,
+   "t_interval_coverage": 0.876
+  },
+  {
+   "parent": "bernoulli(p=0.05)",
+   "n": 1000,
+   "skew": 0.133,
+   "excess_kurtosis": 0.003,
+   "ks_to_normal": 0.0373,
+   "t_interval_coverage": 0.9428
+  }
+ ]
+}

@@ -1,7 +1,7 @@
 # analytics-bench
 
 Reproducible local micro-benchmarks for in-process analytics on a single
-machine. Three independent studies live here, each self-contained with its own
+machine. Six independent studies live here, each self-contained with its own
 script, methodology, and recorded raw output:
 
 | Directory | Study | Question it answers |
@@ -9,6 +9,9 @@ script, methodology, and recorded raw output:
 | [`duckdb-vs-polars/`](duckdb-vs-polars/) | DuckDB vs Polars | On a 10M-row Parquet file, how do the two engines compare on five representative analytical queries (filtered group-by, high-cardinality top-N, time bucketing, small-dimension join, distinct count) in wall-clock time and peak RSS? |
 | [`parquet-codecs/`](parquet-codecs/) | Parquet compression codecs | For the same 10M-row dataset, how do compression codec (none / snappy / zstd-3 / zstd-9 / gzip / lz4), row-group size, and dictionary encoding trade off file size against write and read (full-scan, single-column, predicate-pushdown) speed? |
 | [`serialization-formats/`](serialization-formats/) | Serialization formats | For one batch of 1,000,000 nested event records, how do JSON (stdlib, orjson), MessagePack, pickle, Avro, Arrow IPC (plain and zstd) and Parquet compare on serialized size (raw and after zstd-3) and on whole-batch encode / decode time? |
+| [`clt-convergence/`](clt-convergence/) | Central Limit Theorem convergence | For four parent distributions and n = 2…1000, how fast do sample means become normal, and what is the actual coverage of the nominal 95% t-interval? |
+| [`ga-selection-mutation/`](ga-selection-mutation/) | Genetic algorithm operators | On Rastrigin-10, how do tournament vs roulette selection and the per-gene mutation rate change final solution quality over 10 seeds? |
+| [`fastapi-throughput/`](fastapi-throughput/) | FastAPI throughput | With ApacheBench against uvicorn on localhost, what do `def` vs `async def`, Pydantic validation and 1 vs 4 workers cost in requests/s and latency? |
 
 Every number in each study's `results.json` and `results_raw.txt` is the direct
 output of running its script on the hardware noted below. No values were
@@ -98,4 +101,14 @@ Self-contained (generates its own records in memory):
 ```bash
 cd serialization-formats
 uv run --with orjson,msgpack,fastavro,pyarrow,zstandard python bench.py
+```
+
+### 4–6. CLT convergence, GA operators, FastAPI throughput
+
+Each is self-contained; see its `METHODOLOGY.md`:
+
+```bash
+cd clt-convergence      && uv run --with numpy,scipy python clt_sim.py
+cd ga-selection-mutation && uv run --with numpy python ga_bench.py
+cd fastapi-throughput   && uv run --with fastapi,uvicorn,pydantic python bench.py   # needs `ab`
 ```

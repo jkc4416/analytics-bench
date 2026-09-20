@@ -1,0 +1,10 @@
+Installed 1 package in 12ms
+exp selection       pm   median     best    worst  succ<1  s/run
+A   tournament   0.020    0.996    0.001    1.442    0.80   0.17
+A   roulette     0.020    2.065    0.014    4.045    0.20   0.03
+B   tournament   0.000    9.796    3.899   14.023    0.00   0.02
+B   tournament   0.005    3.698    0.004    4.995    0.10   0.02
+B   tournament   0.020    0.996    0.001    1.442    0.80   0.02
+B   tournament   0.100    0.865    0.002    1.992    0.60   0.02
+B   tournament   0.300    2.976    0.842    5.428    0.10   0.03
+done in 3.1s

@@ -1,0 +1,60 @@
+{
+ "meta": {
+  "tool": "ApacheBench (ab), -n 10000 -c 20 -k after a 2000-request warm-up",
+  "server": "uvicorn, --log-level warning, localhost",
+  "fastapi": "0.141.1",
+  "uvicorn": "0.53.0",
+  "pydantic": "2.13.5",
+  "python": "3.11.14",
+  "machine": "Apple M2 Pro, 32 GiB, macOS",
+  "command": "uv run --with fastapi,uvicorn,pydantic python bench.py",
+  "date": "2026-09-21"
+ },
+ "results": [
+  {
+   "case": "GET /sync, 1 worker",
+   "workers": 1,
+   "requests_per_s": 5494.7,
+   "mean_ms_at_c20": 3.64,
+   "p50_ms": 3,
+   "p99_ms": 10,
+   "failed": 0
+  },
+  {
+   "case": "GET /async, 1 worker",
+   "workers": 1,
+   "requests_per_s": 7607.77,
+   "mean_ms_at_c20": 2.629,
+   "p50_ms": 3,
+   "p99_ms": 3,
+   "failed": 0
+  },
+  {
+   "case": "POST /tasks (Pydantic), 1 worker",
+   "workers": 1,
+   "requests_per_s": 6379.78,
+   "mean_ms_at_c20": 3.135,
+   "p50_ms": 3,
+   "p99_ms": 4,
+   "failed": 0
+  },
+  {
+   "case": "GET /sync, 4 workers",
+   "workers": 4,
+   "requests_per_s": 12641.99,
+   "mean_ms_at_c20": 1.582,
+   "p50_ms": 1,
+   "p99_ms": 3,
+   "failed": 0
+  },
+  {
+   "case": "GET /async, 4 workers",
+   "workers": 4,
+   "requests_per_s": 21299.53,
+   "mean_ms_at_c20": 0.939,
+   "p50_ms": 1,
+   "p99_ms": 2,
+   "failed": 0
+  }
+ ]
+}

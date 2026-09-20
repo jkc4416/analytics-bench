@@ -1,0 +1,174 @@
+{
+ "meta": {
+  "problem": "Rastrigin, D=10, global minimum 0 at origin",
+  "pop": 200,
+  "generations": 300,
+  "crossover": "uniform, p=0.9",
+  "mutation": "Gaussian sigma=0.3 per gene with probability pm",
+  "elitism": 2,
+  "tournament_k": 3,
+  "seeds": 10,
+  "numpy": "2.4.6",
+  "python": "3.11.14",
+  "machine": "Apple M2 Pro, 32 GiB, macOS",
+  "total_seconds": 3.1,
+  "command": "uv run --with numpy python ga_bench.py",
+  "date": "2026-09-21"
+ },
+ "results": [
+  {
+   "experiment": "A",
+   "selection": "tournament",
+   "pm": 0.02,
+   "median_final": 0.996,
+   "best_final": 0.001,
+   "worst_final": 1.442,
+   "success_rate_f_lt_1": 0.8,
+   "seconds_per_run": 0.17,
+   "finals": [
+    0.997,
+    0.996,
+    0.996,
+    0.995,
+    0.001,
+    0.999,
+    1.442,
+    0.041,
+    1.007,
+    0.001
+   ]
+  },
+  {
+   "experiment": "A",
+   "selection": "roulette",
+   "pm": 0.02,
+   "median_final": 2.065,
+   "best_final": 0.014,
+   "worst_final": 4.045,
+   "success_rate_f_lt_1": 0.2,
+   "seconds_per_run": 0.03,
+   "finals": [
+    0.074,
+    2.112,
+    2.058,
+    3.097,
+    0.014,
+    2.053,
+    2.071,
+    4.045,
+    1.438,
+    2.11
+   ]
+  },
+  {
+   "experiment": "B",
+   "selection": "tournament",
+   "pm": 0.0,
+   "median_final": 9.796,
+   "best_final": 3.899,
+   "worst_final": 14.023,
+   "success_rate_f_lt_1": 0.0,
+   "seconds_per_run": 0.02,
+   "finals": [
+    7.408,
+    9.536,
+    11.811,
+    8.172,
+    3.899,
+    13.434,
+    10.152,
+    10.055,
+    14.023,
+    9.391
+   ]
+  },
+  {
+   "experiment": "B",
+   "selection": "tournament",
+   "pm": 0.005,
+   "median_final": 3.698,
+   "best_final": 0.004,
+   "worst_final": 4.995,
+   "success_rate_f_lt_1": 0.1,
+   "seconds_per_run": 0.02,
+   "finals": [
+    4.995,
+    4.981,
+    3.986,
+    2.989,
+    0.004,
+    4.983,
+    3.41,
+    2.997,
+    4.977,
+    2.004
+   ]
+  },
+  {
+   "experiment": "B",
+   "selection": "tournament",
+   "pm": 0.02,
+   "median_final": 0.996,
+   "best_final": 0.001,
+   "worst_final": 1.442,
+   "success_rate_f_lt_1": 0.8,
+   "seconds_per_run": 0.02,
+   "finals": [
+    0.997,
+    0.996,
+    0.996,
+    0.995,
+    0.001,
+    0.999,
+    1.442,
+    0.041,
+    1.007,
+    0.001
+   ]
+  },
+  {
+   "experiment": "B",
+   "selection": "tournament",
+   "pm": 0.1,
+   "median_final": 0.865,
+   "best_final": 0.002,
+   "worst_final": 1.992,
+   "success_rate_f_lt_1": 0.6,
+   "seconds_per_run": 0.02,
+   "finals": [
+    1.992,
+    0.996,
+    0.002,
+    1.002,
+    0.002,
+    1.003,
+    1.001,
+    0.733,
+    0.028,
+    0.005
+   ]
+  },
+  {
+   "experiment": "B",
+   "selection": "tournament",
+   "pm": 0.3,
+   "median_final": 2.976,
+   "best_final": 0.842,
+   "worst_final": 5.428,
+   "success_rate_f_lt_1": 0.1,
+   "seconds_per_run": 0.03,
+   "finals": [
+    5.428,
+    1.783,
+    4.484,
+    5.294,
+    2.271,
+    4.454,
+    2.266,
+    3.68,
+    1.559,
+    0.842
+   ]
+  }
+ ]
+}

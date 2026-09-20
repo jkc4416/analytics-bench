@@ -1,0 +1,9 @@
+Downloading pydantic-core (1.8MiB)
+ Downloaded pydantic-core
+Installed 13 packages in 8ms
+fastapi 0.141.1, uvicorn 0.53.0, pydantic 2.13.5, python 3.11.14, arm64
+GET /sync, 1 worker                   5494.7 req/s  mean   3.64 ms  p50   3 ms  p99  10 ms  failed 0
+GET /async, 1 worker                  7607.8 req/s  mean   2.63 ms  p50   3 ms  p99   3 ms  failed 0
+POST /tasks (Pydantic), 1 worker      6379.8 req/s  mean   3.13 ms  p50   3 ms  p99   4 ms  failed 0
+GET /sync, 4 workers                 12642.0 req/s  mean   1.58 ms  p50   1 ms  p99   3 ms  failed 0
+GET /async, 4 workers                21299.5 req/s  mean   0.94 ms  p50   1 ms  p99   2 ms  failed 0

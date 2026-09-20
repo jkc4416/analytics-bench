@@ -1,0 +1,114 @@
+{
+ "meta": {
+  "n": 1000000,
+  "reps": 3,
+  "stat": "median",
+  "python": "3.11.14",
+  "machine": "Apple M2 Pro, 32 GiB RAM (macOS)",
+  "versions": {
+   "orjson": "3.12.0",
+   "msgpack": [
+    1,
+    2,
+    2
+   ],
+   "fastavro": "1.12.2",
+   "pyarrow": "25.0.1",
+   "zstandard": "0.25.0"
+  },
+  "command": "uv run --with orjson,msgpack,fastavro,pyarrow,zstandard python _workspace/bench/serialization/bench.py",
+  "date": "2026-09-21"
+ },
+ "results": [
+  {
+   "format": "json (stdlib)",
+   "decoded_as": "python objects",
+   "bytes": 192211592,
+   "bytes_zstd3": 26473069,
+   "encode_s": 1.155,
+   "decode_s": 1.727,
+   "encode_rec_per_s": 866127,
+   "decode_rec_per_s": 578880
+  },
+  {
+   "format": "orjson",
+   "decoded_as": "python objects",
+   "bytes": 173211593,
+   "bytes_zstd3": 26207429,
+   "encode_s": 0.174,
+   "decode_s": 1.621,
+   "encode_rec_per_s": 5754673,
+   "decode_rec_per_s": 616903
+  },
+  {
+   "format": "msgpack",
+   "decoded_as": "python objects",
+   "bytes": 133800992,
+   "bytes_zstd3": 25379734,
+   "encode_s": 0.376,
+   "decode_s": 1.844,
+   "encode_rec_per_s": 2661404,
+   "decode_rec_per_s": 542281
+  },
+  {
+   "format": "pickle p5",
+   "decoded_as": "python objects",
+   "bytes": 65227655,
+   "bytes_zstd3": 20679624,
+   "encode_s": 0.469,
+   "decode_s": 1.04,
+   "encode_rec_per_s": 2130063,
+   "decode_rec_per_s": 961784
+  },
+  {
+   "format": "avro (fastavro)",
+   "decoded_as": "python objects",
+   "bytes": 43633305,
+   "bytes_zstd3": 20577064,
+   "encode_s": 1.583,
+   "decode_s": 2.208,
+   "encode_rec_per_s": 631647,
+   "decode_rec_per_s": 452819
+  },
+  {
+   "format": "arrow ipc",
+   "decoded_as": "arrow table",
+   "bytes": 65648032,
+   "bytes_zstd3": 25035391,
+   "encode_s": 0.356,
+   "decode_s": 0.0,
+   "encode_rec_per_s": 2811279,
+   "decode_rec_per_s": 56471488531
+  },
+  {
+   "format": "arrow ipc + pylist",
+   "decoded_as": "python objects",
+   "bytes": 65648032,
+   "bytes_zstd3": 25035391,
+   "encode_s": 0.351,
+   "decode_s": 0.85,
+   "encode_rec_per_s": 2850629,
+   "decode_rec_per_s": 1176505
+  },
+  {
+   "format": "arrow ipc zstd",
+   "decoded_as": "arrow table",
+   "bytes": 27495576,
+   "bytes_zstd3": 27495576,
+   "encode_s": 0.373,
+   "decode_s": 0.011,
+   "encode_rec_per_s": 2679410,
+   "decode_rec_per_s": 95115052
+  },
+  {
+   "format": "parquet zstd",
+   "decoded_as": "arrow table",
+   "bytes": 13071218,
+   "bytes_zstd3": 13071218,
+   "encode_s": 0.544,
+   "decode_s": 0.034,
+   "encode_rec_per_s": 1838477,
+   "decode_rec_per_s": 29419984
+  }
+ ]
+}

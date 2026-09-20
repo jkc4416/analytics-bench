@@ -1,0 +1,16 @@
+Downloading pyarrow (34.3MiB)
+ Downloaded pyarrow
+Installed 5 packages in 10ms
+machine: arm64 Darwin 25.5.0; python 3.11.14
+versions: orjson 3.12.0, msgpack (1, 2, 2), fastavro 1.12.2, pyarrow 25.0.1, zstandard 0.25.0
+generated 1,000,000 records in 1.9s
+json (stdlib)        size=   192.2 MB  zstd3=    26.5 MB  encode=  1.15s  decode=  1.73s  (decoded as python objects)
+orjson               size=   173.2 MB  zstd3=    26.2 MB  encode=  0.17s  decode=  1.62s  (decoded as python objects)
+msgpack              size=   133.8 MB  zstd3=    25.4 MB  encode=  0.38s  decode=  1.84s  (decoded as python objects)
+pickle p5            size=    65.2 MB  zstd3=    20.7 MB  encode=  0.47s  decode=  1.04s  (decoded as python objects)
+avro (fastavro)      size=    43.6 MB  zstd3=    20.6 MB  encode=  1.58s  decode=  2.21s  (decoded as python objects)
+arrow ipc            size=    65.6 MB  zstd3=    25.0 MB  encode=  0.36s  decode=  0.00s  (decoded as arrow table)
+arrow ipc + pylist   size=    65.6 MB  zstd3=    25.0 MB  encode=  0.35s  decode=  0.85s  (decoded as python objects)
+arrow ipc zstd       size=    27.5 MB  zstd3=    27.5 MB  encode=  0.37s  decode=  0.01s  (decoded as arrow table)
+parquet zstd         size=    13.1 MB  zstd3=    13.1 MB  encode=  0.54s  decode=  0.03s  (decoded as arrow table)
+wrote /Users/kyungchaejung/wordpress-blog/_workspace/bench/serialization/results.json
